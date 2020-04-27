@@ -17,9 +17,6 @@ const account = [
     { month: 12, expense: 200 }
 ];
 
-
-
-
 const menesiai = ["Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", 'Gruodis']
 
 // for(let i = 0; i< account.length;i++){
@@ -37,22 +34,28 @@ const menesiai = ["Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Biržel
 // }
 // }
 
-
+let islaidos 
 
 let HTML = ""
 
 function pusinsRows ( menesioNumeris, income, islaidos){
    
     let balansas = 0
-    if(income === undefined || islaidos === undefined ){
+    if(income != undefined && islaidos != undefined ){
         balansas = income - islaidos
+        console.log(balansas)
+        console.log(income, islaidos)
     }
+    if(balansas === 0){
+        balansas = "-"
+    }
+
         let HTML = 
         `   <div class="table-row">
         <div class="cell">${menesioNumeris}</div>
         <div class="cell">${menesiai[menesioNumeris-1]}</div>
         <div class="cell">${income} Eur</div>
-        <div class="cell">-</div>
+        <div class="cell">${balansas}</div>
         <div class="cell">${income} Eur</div>
         </div>`
 
