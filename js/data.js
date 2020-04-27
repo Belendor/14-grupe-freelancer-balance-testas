@@ -17,6 +17,9 @@ const account = [
     { month: 12, expense: 200 }
 ];
 
+
+
+
 const menesiai = ["Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", 'Gruodis']
 
 // for(let i = 0; i< account.length;i++){
@@ -47,7 +50,7 @@ function pusinsRows ( menesioNumeris, income, islaidos){
         let HTML = 
         `   <div class="table-row">
         <div class="cell">${menesioNumeris}</div>
-        <div class="cell">Sausis</div>
+        <div class="cell">${menesiai[menesioNumeris-1]}</div>
         <div class="cell">${income} Eur</div>
         <div class="cell">-</div>
         <div class="cell">${income} Eur</div>
@@ -56,18 +59,17 @@ function pusinsRows ( menesioNumeris, income, islaidos){
     contentBox.insertAdjacentHTML("beforeend", HTML )
 }
 
-pusinsRows ( 10, 150, undefined)
 pusinsRows ( 1, 200, 50)
+pusinsRows ( 2, 50, undefined)
 pusinsRows ( 3, 450, 200)
-pusinsRows ( 7, 50, undefined)
-pusinsRows ( 2, 50, undefined)
-pusinsRows ( 2, 50, undefined)
-pusinsRows ( 5, 150, 50)
-pusinsRows ( 9, 700, 400)
 pusinsRows ( 4, 10, 300)
+pusinsRows ( 5, 150, 50)
 pusinsRows ( 6, 50, undefined)
-pusinsRows ( 11, 150,30)
+pusinsRows ( 7, 50, undefined)
 pusinsRows ( 8, 450, 120)
+pusinsRows ( 9, 700, 400)
+pusinsRows ( 10, 150, undefined)
+pusinsRows ( 11, 150,30)
 pusinsRows ( 12, 200, undefined)
 
 
